@@ -1,0 +1,48 @@
+{% extends 'base.html' %}{% load static %}
+{% block meta %}{% endblock meta %}
+{% block style %}{% endblock style %}
+{% block title %}{% endblock title %}
+{% block content %}
+    <h1>Recipe</h1>
+    <hr>
+    <p>Name: {{ recipe.name }}</p>
+    <p>By: <span class="user">{{ recipe.user.firstname }} {{ recipe.user.lastname }}</span></p>
+    <p>Ingredients:</p>
+    <p>{{ recipe.ingredients }}</p>
+    <p>Instructions:</p>
+    <p>{{ recipe.instructions }}</p>
+    <br>
+    {% if recipe.user == request.user %}
+        <a href="{% url 'recipe:edit_recipe' recipe.id %}" title="edit recipe">Edit recipe</a>
+        <a href="{% url 'recipe:delete_recipe' recipe.id %}" title="delete recipe">Delete recipe</a>
+    {% endif %}
+
+    <div class="comment-form">
+        <form action="." method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Comment</button>
+        </form>
+    </div>
+
+    <hr>
+    <h2>Comments:</h2>
+    <div class="comments-container">
+        <hr>
+        {% for comment in comments %}
+            <div class="comment">
+                <p>{{ comment.content }}</p>
+                <p>By: <span class="user">{{ comment.user.firstname }} {{ comment.user.lastname }}</span></p>
+                <p>On: {{ comment.created_at }}</p>
+                {% if comment.user == request.user %}
+                    <a href="{% url 'recipe:comment_edit' comment.id %}" title="edit comment">Edit comment</a>
+                    <a href="{% url 'recipe:comment_delete' comment.id %}" title="delete comment">Delete comment</a>
+                {% endif %}
+            </div>
+            <hr>
+        {% empty %}
+            <p>No comments found.</p>
+        {% endfor %}
+    </div>
+{% endblock content %}
+{% block script %}{% endblock script %}

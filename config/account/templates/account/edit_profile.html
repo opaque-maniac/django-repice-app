@@ -1,0 +1,14 @@
+{% extends 'base.html' %}{% load static %}
+{% block meta %}{% endblock meta %}
+{% block style %}{% endblock style %}
+{% block title %}{% endblock title %}
+{% block content %}
+    <h1>Edit profile</h1>
+    <hr>
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update profile</button>
+    </form>
+{% endblock content %}
+{% block script %}{% endblock script %}

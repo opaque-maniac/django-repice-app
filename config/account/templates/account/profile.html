@@ -1,0 +1,16 @@
+{% extends 'base.html' %}{% load static %}
+{% block meta %}{% endblock meta %}
+{% block style %}{% endblock style %}
+{% block title %}{% endblock title %}
+{% block content %}
+    <h1>Profile</h1>
+    <hr>
+    <img src="{{ profile.picture_image.url }}" alt="profile image">
+    <p>First name: {{ profile.firstname }}</p>
+    <p>Last name: {{ profile.lastname }}</p>
+    <p>Username: {{ profile.user.username }}</p>
+    <p>Email: {{ profile.user.email }}</p>
+    <br>
+    <a href="{% url 'account:edit_profile' %}" title="edit profile">Edit profile</a>
+{% endblock content %}
+{% block script %}{% endblock script %}

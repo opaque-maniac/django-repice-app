@@ -1,0 +1,14 @@
+{% extends 'base.html' %}{% load static %}
+{% block meta %}{% endblock meta %}
+{% block style %}{% endblock style %}
+{% block title %}{% endblock title %}
+{% block content %}
+    <h1>New recipe:</h1>
+    <hr>
+    <form action="." method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Post</button>
+    </form>
+{% endblock content %}
+{% block script %}{% endblock script %}
