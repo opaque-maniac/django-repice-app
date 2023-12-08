@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{% static 'recipe/css/recipe.css' %}">
     <link rel="stylesheet" href="{% static 'recipe/css/comment.css' %}">
 {% endblock style %}
-{% block title %}{% endblock title %}
+{% block title %}{{ recipe.name }}{% endblock title %}
 {% block content %}
     <h1>Recipe</h1>
     <hr>
