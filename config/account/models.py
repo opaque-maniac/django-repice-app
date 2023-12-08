@@ -8,7 +8,7 @@ class UserProfile(models.Model):
     first_name = models.CharField(max_length=50, blank=True, null=True)
     last_name = models.CharField(max_length=50, blank=True, null=True)
     profile_picture = models.ImageField(upload_to='profile_pictures', blank=True, null=True)
-    has_permission = models.BooleanField(default=False)
+    is_blocked = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = 'profile'

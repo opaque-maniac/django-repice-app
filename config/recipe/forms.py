@@ -12,7 +12,7 @@ class AddRecipeForm(forms.ModelForm):
             'image': '',
             'category': '',
             }
-        widgets = {
+        widgetss = {
             'name': forms.TextInput(attrs={
                 'class': 'add-recipe-input',
                 'placeholder': 'Recipe Name',
@@ -39,7 +39,7 @@ class CommentForm(forms.ModelForm):
         labels = {
             'comment': '',
         }
-        widgets = {
+        widgetss = {
             'comment': forms.Textarea(attrs={
                 'class': 'comment-input',
                 'placeholder': 'Add a comment',

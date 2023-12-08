@@ -1,6 +1,8 @@
 {% extends 'base.html' %}{% load static %}
 {% block meta %}{% endblock meta %}
-{% block style %}{% endblock style %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'recipe/css/new_recipe.css' %}">
+{% endblock style %}
 {% block title %}{% endblock title %}
 {% block content %}
     <h1>Edit recipe:</h1>
@@ -11,4 +13,6 @@
         <button type="submit">Post</button>
     </form>
 {% endblock content %}
-{% block script %}{% endblock script %}
+{% block scripts %}
+    <script src="{% static 'recipe/js/new_recipe.js' %}"></script>
+{% endblock scripts %}

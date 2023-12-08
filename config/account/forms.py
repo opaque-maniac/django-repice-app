@@ -15,7 +15,7 @@ class RegisterForm(UserCreationForm):
             'password1': '',
             'password2': '',
             }
-        widget = {
+        widgets = {
             'email': forms.EmailInput(attrs={
                 'class': 'register-input',
                 'placeholder': 'Email'
@@ -35,7 +35,7 @@ class RegisterForm(UserCreationForm):
         }
 
 # Form for login
-class LoginForm:
+class LoginForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['email', 'password']
@@ -43,7 +43,7 @@ class LoginForm:
             'email': '',
             'password': '',
             }
-        widget = {
+        widgets = {
             'email': forms.EmailInput(attrs={
                 'class': 'login-input',
                 'placeholder': 'Email'
@@ -65,7 +65,7 @@ class EditProfileForm(forms.ModelForm):
             'bio': '',
             'profile_picture': '',
             }
-        widget = {
+        widgets = {
             'first_name': forms.TextInput(attrs={
                 'class': 'edit-profile-input',
                 'placeholder': 'First Name'

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}{% load static %}
+{% block meta %}{% endblock meta %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'recipe/css/categories.css' %}">
+{% endblock style %}
+{% block title %}{% endblock title %}
+{% block content %}
+    <h1>Categories</h1>
+    <div class="left">
+        <ul>
+            {% for category in categories %}
+                <a href="{% url 'recipe:categories' %}?category_id={{ category.id }}">{{ category.name }}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="right">
+        <ul class="posts-list">
+            {% if recipes %}
+                <li>
+                    {% for recipe in recipes %}
+                        <a href="{% url 'recipe:recipe' recipe.id %}">
+                            <li>
+                                <p>{{ recipe.name }}</p>
+                                <p>By: <span class="user">{{ recipe.user.firstname }} {{ recipe.user.lastname }}</span></p>
+                            </li>
+                        </a>
+                    {% endfor %}
+                </li>
+            {% else %}
+                <li>
+                    <p>No recipes for this category.</p>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+
+{% endblock content %}
+{% block script %}
+    <script src="{% static 'recipe/js/categories.js' %}"></script>
+{% endblock script %}

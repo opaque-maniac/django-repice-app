@@ -1,15 +1,19 @@
 {% extends 'base.html' %}{% load static %}
 {% block meta %}{% endblock meta %}
-{% block style %}{% endblock style %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'account/css/login.css' %}">
+{% endblock style %}
 {% block title %}{% endblock title %}
 {% block content %}
     <form action="." method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Register</button>
+        <button type="submit">Log in</button>
     </form>
 
-    <p class="alt-text">Already have an account?</p>
-    <a href="{% url 'account:login' %}" title="login">Login instead!</a>
+    <p class="alt-text">Don't have an account?</p>
+    <a href="{% url 'account:register' %}" title="register">Register instead!</a>
 {% endblock content %}
-{% block script %}{% endblock script %}
+{% block scripts %}
+    <script src="{% static 'account/js/login.js' %}"></script>
+{% endblock scripts %}

@@ -1,6 +1,9 @@
 {% extends 'base.html' %}{% load static %}
 {% block meta %}{% endblock meta %}
-{% block style %}{% endblock style %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'account/css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'account/css/profile_media.css' %}">
+{% endblock style %}
 {% block title %}{% endblock title %}
 {% block content %}
     <h1>Profile</h1>
@@ -11,6 +14,37 @@
     <p>Username: {{ profile.user.username }}</p>
     <p>Email: {{ profile.user.email }}</p>
     <br>
-    <a href="{% url 'account:edit_profile' %}" title="edit profile">Edit profile</a>
+    {% if profle.user == user %}
+        <a href="{% url 'account:edit_profile' %}" title="edit profile">Edit profile</a>
+        <a href="{% url 'account:delete_profile' %}" title="delete profile">Delete profile</a>
+        {% if profile.has_permission %}
+            <a href="{% url 'admin_console:index' %}" title="admin-console">Admin console</a>
+        {% endif %}
+    {% endif %}
+
+    <h2>Recipes</h2>
+    <hr>
+    <ul class="posts-list">
+        {% if recipes %}
+            <li>
+                {% for recipe in recipes %}
+                    <a href="{% url 'recipe:recipe' recipe.id %}">
+                        <li>
+                            <p>{{ recipe.name }}</p>
+                            <p>By: <span class="user">{{ recipe.user.firstname }} {{ recipe.user.lastname }}</span></p>
+                        </li>
+                    </a>
+                {% endfor %}
+            </li>
+        {% else %}
+            <li>
+                {% if profile.user == user %}
+                    <p>You do not have any recipes!</p>
+                {% else %}
+                    <p>No recipes for {{ profile.firstname }}</p>
+                {% endif %}
+            </li>
+        {% endif %}
+    </ul>
 {% endblock content %}
-{% block script %}{% endblock script %}
+{% block scripts %}{% endblock scripts %}

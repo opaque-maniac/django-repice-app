@@ -1,12 +1,17 @@
 {% extends 'base.html' %}{% load static %}
 {% block meta %}{% endblock meta %}
-{% block style %}{% endblock style %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'recipe/css/recipe.css' %}">
+    <link rel="stylesheet" href="{% static 'recipe/css/comment.css' %}">
+{% endblock style %}
 {% block title %}{% endblock title %}
 {% block content %}
     <h1>Recipe</h1>
     <hr>
     <p>Name: {{ recipe.name }}</p>
-    <p>By: <span class="user">{{ recipe.user.firstname }} {{ recipe.user.lastname }}</span></p>
+    <p>By: <span class="user">
+        <a href="{% url 'account:individual_profile' recipe.user.profile.id %}">{{ recipe.user.firstname }} {{ recipe.user.lastname }}</a>
+    </span></p>
     <p>Ingredients:</p>
     <p>{{ recipe.ingredients }}</p>
     <p>Instructions:</p>
@@ -45,4 +50,4 @@
         {% endfor %}
     </div>
 {% endblock content %}
-{% block script %}{% endblock script %}
+{% block scripts %}{% endblock scripts %}
