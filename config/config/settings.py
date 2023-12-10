@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4y92n0gb()g&o7!+px81)h2sq9e*4syn-0#l2888(s0jrc4k9+'
+SECRET_KEY = 'django-insecure-2k)qd2@wvl8n(o!l_jk-^k^3ys4&m%3a%uy^pl*nu3p5!s#nq4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'recipes',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +125,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Urls for login and logout redirect
+LOGIN_REDIRECT_URL = 'recipes:index'
+LOGUT_REDIRECT_URL = 'recipes:index'
