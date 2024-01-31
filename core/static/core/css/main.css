@@ -1,0 +1,96 @@
+@import url('./base.css');
+
+/* For the page background */
+.page-backgroud {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../img/background-medium.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* For the page title */
+.header__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* For the page title text */
+.header__title-text {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* For all icons in the header */
+.header__title-icon,
+.menu__icon {
+    width: 2rem;
+    height: 2rem;
+}
+.header__title-icon path,
+.menu__icon path {
+    fill: var(--color-text-primary);
+}
+
+/* For the header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-text-primary);
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* For the menu icons in the header */
+.header .menu__icon {
+    border: 0.5px solid var(--color-text-primary);
+    padding: 5px;
+    border-radius: 10px;
+}
+.header .menu__icon:hover {
+    cursor: pointer;
+    border-color: var(--color-text-secondary);
+}
+
+/* Hide the menu close button */
+#x-icon {
+    display: none;
+}
+
+/* For all unordered lists in the header and footer */
+.navbar__list,
+.footer__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* For all links in header, navbar and footer*/
+.footer a,
+.header a,
+.navbar a {
+    text-decoration: none;
+}
+
+/* For all the links in header */
+.header a {
+    color: var(--color-text-primary);
+}
+.main-container {
+    padding-top: calc(60px + 10px);
+}
+

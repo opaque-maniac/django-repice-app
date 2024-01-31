@@ -50,4 +50,25 @@ class RegisterForm(UserCreationForm):
         }
 
 # Login form
-
+class LoginForm(AuthenticationForm):
+    class Meta:
+        model = get_user_model()
+        fields = ['email', 'password']
+        labels = {
+            'email': _('Email'),
+            'password': _('Password')
+        }
+        help_texts = {
+            'email': _('Required. Please enter your email address.'),
+            'password': _('Required. Please enter your password.')
+        }
+        widgets = {
+            'email': forms.EmailInput(attrs={
+                'class': 'form-control form__email',
+                'placeholder': 'Email'
+            }),
+            'password': forms.PasswordInput(attrs={
+                'class': 'form-control form__password',
+                'placeholder': 'Password'
+            })
+        }

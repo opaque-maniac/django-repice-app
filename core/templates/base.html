@@ -1,0 +1,38 @@
+<!DOCTYPE html>{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'core/img/noodles-image.png' %}">
+    {% block meta %}
+    {% endblock meta %}
+    <link rel="stylesheet" href="{% static 'core/css/main.css' %}">
+    {% block css %}
+    {% endblock css %}
+    <title>{% block title %}{% endblock title %} | Recipe</title>
+</head>
+
+<body>
+    <div class="page-backgroud">
+    </div>
+    <div class="main-container">
+        {% include 'header.html' %}
+
+        <!-- The page content -->
+        <main class="main">
+            {% block content %}
+            {% endblock content %}
+        </main>
+
+        {% include 'footer.html' %}
+    </div>
+    <script src="{% static 'core/js/main.js' %}"></script>
+    {% block js %}
+    {% endblock js %}
+</body>
+
+</html>
