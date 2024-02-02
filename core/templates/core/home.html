@@ -1,11 +1,34 @@
 {% extends "base.html" %}{% load static %}
-{% block meta %}{% endblock %}
+{% block meta %}
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
+    <meta property="og:title" content="Flavor Fusion">
+    <meta property="og:description" content="Flavor fusion, one stop for all recipes">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.scheme }}://{{ request.host }}{% url 'core:home' %}">
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.host }}{% static 'core/img/flavor-fushion' %}">
+    <meta property="og:image:width" content="900">
+    <meta property="og:image:height" content="900">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="Flavor Fusion">
+    <meta name="twitter:title" content="Flavor fusion">
+    <meta name="twitter:description" content="Flavor fusion, one stop for all recipes">
+    <meta name="twitter:url" content="{{ request.scheme }}://{{ request.host }}{% url 'core:home' %}">
+    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.host }}{% static 'core/img/flavor-fushion' %}">
+    <meta name="twitter:image:width" content="900">
+    <meta name="twitter:image:height" content="900">
+
+    <!-- Additional Meta Tags (optional) -->
+    <meta name="author" content="Opaque Maniac">
+    <meta name="description" content="flavor fusion, website to get any recipe you need">
+{% endblock %}
 {% block css %}
-<link rel="stylesheet" href="{% static 'core/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/home.css' %}">
 {% endblock css %}
 {% block title %}Home{% endblock %}
 {% block content %}
 <!-- The home page -->
+
 <section class="section section__intro">
     <h2 class="intro__title">Welcome to culinary heaven</h2>
     <div class="intro__container">

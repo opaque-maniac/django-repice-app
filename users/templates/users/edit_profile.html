@@ -1,9 +1,24 @@
 {% extends "base.html" %}{% load static %}
-{% block meta %}{% endblock %}
+{% block meta %}
+    <!-- Meta tags for bots -->
+    <meta name="googlebot" content="noindex">
+    <meta name="googlebot-news" content="nosnippet">
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="noarchive">
+    <meta name="robots" content="nofollow">
+    <meta name="robots" content="nosnippet">
+    <meta name="robots" content="noimageindex">
+    <meta name="robots" content="noodp">
+    <meta name="robots" content="noydir">
+    <meta name="robots" content="nocache">
+{% endblock %}
 {% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'users/css/edit_profile.css' %}">
 {% endblock css %}
-{% block title %}Sign Up{% endblock %}
+{% block title %}Edit Profile{% endblock %}
 {% block content %}
+<!-- Template to edit user profile -->
+
 <section class="section">
     <h2 class="section__title">Edit profile</h2>
     <form class="form login_form" method="post" action=".">
@@ -17,13 +32,10 @@
             {% endfor %}
         </div>
         {% endfor %}
-        <button class="btn btn--primary" type="submit">Sign Up</button>
+       <button class="btn btn--primary" type="submit">Sign Up</button>
     </form>
-
-    <div class="alt-container">
-        <a href="{% url 'users:login' %}">Have an account, log in instead!</a>
-    </div>
 </section>
 {% endblock content %}
 {% block js %}
+    <script type="text/javascript" src="{% static 'users/js/edit_profile.js' %}"></script>
 {% endblock js %}

@@ -53,6 +53,7 @@ INSTALLED_APPS = [
 #AUTH USER MODEL
 AUTH_USER_MODEL = 'users.CustomUser'
 
+
 # For the editor
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
@@ -204,3 +205,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# URLS for authentication redirect
+LOGIN_URL = 'users:login'
+LOGIN_REDIRECT_URL = 'core:home'

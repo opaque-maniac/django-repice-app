@@ -1,6 +1,9 @@
+<!-- This is the page header -->
+
 <header class="header">
     <div class="header__info">
         <a href="{% url 'core:home' %}" class="header__title">
+            <!-- SVG for the page icon -->
             <svg class="header__title-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" width="48.000000pt"
                 height="48.000000pt" viewBox="0 0 48.000000 48.000000" preserveAspectRatio="xMidYMid meet">
 
@@ -14,16 +17,17 @@
                         16 -31z" />
                 </g>
             </svg>
-            <h1 class="header__title-text">Recipe</h1>
+            <h1 class="header__title-text">FlavorFusion</h1>
         </a>
-        <!-- SVG of icon here -->
     </div>
+    <!-- SVG for the menu icon -->
     <svg class="menu__icon" id="menu-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"
         viewBox="0 0 24 24">
         <path
             d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z">
         </path>
     </svg>
+    <!-- SVG for the x icon -->
     <svg class="menu__icon hidden hide" id="x-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
         fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
         <path
@@ -31,6 +35,7 @@
     </svg>
 </header>
 
+<!-- The page navigation -->
 <nav class="navbar navbar-hide">
     <ul class="navbar__list">
         <li class="navbar__list-item"><a href="{% url 'core:home' %}">Home</a></li>

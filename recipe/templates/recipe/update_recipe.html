@@ -1,9 +1,24 @@
 {% extends "base.html" %}{% load static %}
-{% block meta %}{% endblock %}
+{% block meta %}
+    <!-- Meta tags for bots -->
+    <meta name="googlebot" content="noindex">
+    <meta name="googlebot-news" content="nosnippet">
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="noarchive">
+    <meta name="robots" content="nofollow">
+    <meta name="robots" content="nosnippet">
+    <meta name="robots" content="noimageindex">
+    <meta name="robots" content="noodp">
+    <meta name="robots" content="noydir">
+    <meta name="robots" content="nocache">
+{% endblock %}
 {% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'recipe/css/update_recipe.css' %}">
 {% endblock css %}
 {% block title %}Update Recipe{% endblock %}
 {% block content %}
+<!-- Form to update a recipe-->
+
 <section class="section">
     <h1 class="title">Update Recipe</h2>
     <form class="recipe_form" method="POST" action=".">
@@ -19,4 +34,5 @@
 </section>
 {% endblock content %}
 {% block js %}
+    <script type="text/javascript" src="{% static 'recipe/js/update_recipe.js' %}"></script>
 {% endblock js %}

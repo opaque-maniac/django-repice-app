@@ -1,16 +1,51 @@
 {% extends "base.html" %}{% load static %}
-{% block meta %}{% endblock %}
+{% block meta %}
+    <!-- For the bot -->
+    <meta name="robots" content="nofollow">
+
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
+    <meta property="og:title" content="{{ recipe.title }}">
+    <meta property="og:description" content="{{ recipe.description }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ request.scheme }}://{{ request.host }}{% url 'recipe:recipe_detail' recipe.id %}">
+    <meta property="og:image" content="{{ recipe.cover_image.url }}">
+    <meta property="og:image:width" content="900">
+    <meta property="og:image:height" content="900">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="{{ recipe.title }}">
+    <meta name="twitter:title" content="{{ recipe.title }}">
+    <meta name="twitter:description" content="{{ recipe.description }}">
+    <meta name="twitter:url" content="{{ request.scheme }}://{{ request.host }}{% url 'recipe:recipe_detail' recipe.id %}">
+    <meta name="twitter:image" content="{{ recipe.cover_image.url }}">
+    <meta name="twitter:image:width" content="900">
+    <meta name="twitter:image:height" content="900">
+
+    <!-- Additional information about the recipe -->
+    <meta property="article:published_time" content="{{ recipe.date_created }}">
+    <meta property="article:modified_time" content="{{ recipe.date_updated }}">
+
+    <!-- Additional Meta Tags (optional) -->
+    <meta name="author" content="{{ recipe.author.first_name }} {{ recipe.author.last_name }}">
+    <meta name="description" content="All recipes on the flavor fushion platform">
+{% endblock %}
 {% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'recipe/css/recipe_detail.css' %}">
 {% endblock css %}
 {% block title %}{{ recipe.title }}{% endblock %}
 {% block content %}
+
+<!-- This section contains an individual recipe -->
+
 <section class="section">
     <h2 class="recipe__title">{{ recipe.title }}</h2>
     <p class="recipe__description">{{ recipe.description }}</p>
+    <p class="recipe__date-created">Created on {{ recipe.date_created }}</p>
+    <p class="recipe__date-updated">Last updated on {{ recipe.date_updated }}</p>
     <div class="recipe__image">
         <img src="{{ recipe.cover_image.url }}" alt="{{ recipe.title }}">
     </div>
-    <p class="recipe__author">By <span>{{ recipe.author.first_name }} {{ recipe.author.last_name }}</span></p>
+    <p class="recipe__author">By <span><a href="{% url 'recipe:user_recipes' recipe.author.id %}">{{ recipe.author.first_name }} {{ recipe.author.last_name }}</a></span></p>
 
     <div class="recipe__content">
         <article>

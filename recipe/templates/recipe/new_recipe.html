@@ -1,9 +1,35 @@
 {% extends "base.html" %}{% load static %}
-{% block meta %}{% endblock %}
+{% block meta %}
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
+    <meta property="og:title" content="Create New Recipes Flavor Fusion">
+    <meta property="og:description" content="Create a recipes on flavor fusion">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.scheme }}://{{ request.host }}{% url 'recipe:new_recipe' %}">
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.host }}{% static 'core/img/flavor-fushion' %}">
+    <meta property="og:image:width" content="900">
+    <meta property="og:image:height" content="900">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="Create New Recipes Flavor Fusion">
+    <meta name="twitter:title" content="Create New Recipes Flavor Fusion">
+    <meta name="twitter:description" content="Create a new recipe to share on flavor fusion">
+    <meta name="twitter:url" content="{{ request.scheme }}://{{ request.host }}{% url 'recipe:new_recipe' %}">
+    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.host }}{% static 'core/img/flavor-fushion' %}">
+    <meta name="twitter:image:width" content="900">
+    <meta name="twitter:image:height" content="900">
+
+    <!-- Additional Meta Tags (optional) -->
+    <meta name="author" content="Opaque Maniac">
+    <meta name="description" content="create and share a new recipe on flavor fushion">
+{% endblock %}
 {% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'recipe/css/new_recipe.css' %}">
 {% endblock css %}
 {% block title %}New Recipe{% endblock %}
 {% block content %}
+
+<!-- This is a template for a new recipe -->
+
 <section class="section">
     <h1 class="title">New Recipe</h2>
     <form class="recipe_form" method="POST" action=".">
@@ -19,4 +45,5 @@
 </section>
 {% endblock content %}
 {% block js %}
+    <script type="text/javascript" src="{% static 'recipe/js/new_recipe.js' %}"></script>
 {% endblock js %}
