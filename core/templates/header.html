@@ -24,20 +24,22 @@
             d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z">
         </path>
     </svg>
-    <svg class="menu__icon hidden" id="x-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+    <svg class="menu__icon hidden hide" id="x-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
         fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
         <path
             d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
     </svg>
 </header>
 
-<nav class="navbar">
+<nav class="navbar navbar-hide">
     <ul class="navbar__list">
+        <li class="navbar__list-item"><a href="{% url 'core:home' %}">Home</a></li>
         <li class="navbar__list-item"><a href="{% url 'core:about' %}">About</a></li>
         <li class="navbar__list-item"><a href="{% url 'core:contact' %}">Contact</a></li>
         <li class="navbar__list-item"><a href="{% url 'core:terms' %}">Terms & Condition</a></li>
         {% if user.is_authenticated %}
         <li class="navbar__list-item"><a href="{% url 'recipe:all_recipes' %}">Recipes</a></li>
+        <li class="navbar__list-item"><a href="{% url 'recipe:new_recipe' %}">New Recipes</a></li>
         <li class="navbar__list-item"><a href="{% url 'users:logout' %}">Logout</a></li>
         {% else %}
         <li class="navbar__list-item"><a href="{% url 'users:login' %}">Login</a></li>

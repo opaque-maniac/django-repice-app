@@ -16,10 +16,6 @@ def contact_view(request):
 def terms_view(request):
     return render(request, 'core/terms.html')
 
-# View for the privacy page
-def privacy_view(request):
-    return render(request, 'core/privacy.html')
-
 # View for the 404 page
 def handler404(request, exception):
     return render(request, 'core/404.html', status=404)

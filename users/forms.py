@@ -19,13 +19,6 @@ class RegisterForm(UserCreationForm):
             'password1': _('Password'),
             'password2': _('Confirm password')
         }
-        help_texts = {
-            'email': _('Required. Please enter a valid email address.'),
-            'first_name': _('Required. Please enter your first name.'),
-            'last_name': _('Required. Please enter your last name.'),
-            'password1': _('Required. Please enter a password.'),
-            'password2': _('Required. Please confirm your password.')
-        }
         widgets = {
             'email': forms.EmailInput(attrs={
                 'class': 'form-control form__email',
@@ -57,10 +50,6 @@ class LoginForm(AuthenticationForm):
         labels = {
             'email': _('Email'),
             'password': _('Password')
-        }
-        help_texts = {
-            'email': _('Required. Please enter your email address.'),
-            'password': _('Required. Please enter your password.')
         }
         widgets = {
             'email': forms.EmailInput(attrs={

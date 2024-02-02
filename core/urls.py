@@ -4,7 +4,6 @@ from .views import (
     about_view,
     contact_view,
     terms_view,
-    privacy_view,
 )
 
 app_name = 'core'
@@ -15,5 +14,4 @@ urlpatterns = [
     path('about/', about_view, name='about'),
     path('contact/', contact_view, name='contact'),
     path('terms/', terms_view, name='terms'),
-    path('privacy/', privacy_view, name='privacy'),
 ]
