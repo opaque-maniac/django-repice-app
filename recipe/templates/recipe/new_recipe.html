@@ -1,0 +1,22 @@
+{% extends "base.html" %}{% load static %}
+{% block meta %}{% endblock %}
+{% block css %}
+{% endblock css %}
+{% block title %}New Recipe{% endblock %}
+{% block content %}
+<section class="section">
+    <h1 class="title">New Recipe</h2>
+    <form class="recipe_form" method="POST" action=".">
+        {% csrf_token %}
+        <div class="form-outline">
+            {{form.as_p}}
+            <br>
+        </div>  
+        <!--Blog Text Area-->
+        {{form.media}}
+        <input type="submit">
+    </form>
+</section>
+{% endblock content %}
+{% block js %}
+{% endblock js %}

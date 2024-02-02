@@ -1,0 +1,44 @@
+
+:root {
+    --font-family: 'Inter', sans-serif;
+    --font-family-secondary: 'Dancing Script', cursive;
+    --font-size: 1rem;
+    --font-size-mobile: 2rem;
+    --font-weight: 400;
+    --line-height: 1.5;
+    --color-primary: 	#FAC898;
+    --color-text-primary: #FFFFF0;
+    --color-text-secondary: #000000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    line-height: var(--line-height);
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-family-secondary) !important;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+@media (max-width:480px) {
+    html {
+        font-size: var(--font-size-mobile);
+    }
+}

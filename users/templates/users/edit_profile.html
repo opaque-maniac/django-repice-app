@@ -1,0 +1,29 @@
+{% extends "base.html" %}{% load static %}
+{% block meta %}{% endblock %}
+{% block css %}
+{% endblock css %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+<section class="section">
+    <h2 class="section__title">Edit profile</h2>
+    <form class="form login_form" method="post" action=".">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form__group">
+            <label class="form__label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+            {% for error in field.errors %}
+            <small class="form__text form__text--error">{{ error }}</small>
+            {% endfor %}
+        </div>
+        {% endfor %}
+        <button class="btn btn--primary" type="submit">Sign Up</button>
+    </form>
+
+    <div class="alt-container">
+        <a href="{% url 'users:login' %}">Have an account, log in instead!</a>
+    </div>
+</section>
+{% endblock content %}
+{% block js %}
+{% endblock js %}

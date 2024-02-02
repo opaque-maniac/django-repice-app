@@ -1,0 +1,23 @@
+{% extends "base.html" %}{% load static %}
+{% block meta %}{% endblock %}
+{% block css %}
+{% endblock css %}
+{% block title %}{{ recipe.title }}{% endblock %}
+{% block content %}
+<section class="section">
+    <h2 class="recipe__title">{{ recipe.title }}</h2>
+    <p class="recipe__description">{{ recipe.description }}</p>
+    <div class="recipe__image">
+        <img src="{{ recipe.cover_image.url }}" alt="{{ recipe.title }}">
+    </div>
+    <p class="recipe__author">By <span>{{ recipe.author.first_name }} {{ recipe.author.last_name }}</span></p>
+
+    <div class="recipe__content">
+        <article>
+            {{ recipe.content|safe }}
+        </article>
+    </div>
+</section>
+{% endblock content %}
+{% block js %}
+{% endblock js %}

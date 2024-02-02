@@ -19,13 +19,6 @@ class RegisterForm(UserCreationForm):
             'password1': _('Password'),
             'password2': _('Confirm password')
         }
-        help_texts = {
-            'email': _('Required. Please enter a valid email address.'),
-            'first_name': _('Required. Please enter your first name.'),
-            'last_name': _('Required. Please enter your last name.'),
-            'password1': _('Required. Please enter a password.'),
-            'password2': _('Required. Please confirm your password.')
-        }
         widgets = {
             'email': forms.EmailInput(attrs={
                 'class': 'form-control form__email',
@@ -50,4 +43,71 @@ class RegisterForm(UserCreationForm):
         }
 
 # Login form
+class LoginForm(AuthenticationForm):
+    class Meta:
+        model = get_user_model()
+        fields = ['email', 'password']
+        labels = {
+            'email': _('Email'),
+            'password': _('Password')
+        }
+        widgets = {
+            'email': forms.EmailInput(attrs={
+                'class': 'form-control form__email',
+                'placeholder': 'Email'
+            }),
+            'password': forms.PasswordInput(attrs={
+                'class': 'form-control form__password',
+                'placeholder': 'Password'
+            })
+        }
 
+# Form for updating user information
+class UpdateUserForm(UserChangeForm):
+    class Meta:
+        model = get_user_model()
+        fields = ['email', 'first_name', 'last_name', 'phone', 'address', 'city', 'country', 'profile_picture']
+        labels = {
+            'email': _('Email'),
+            'first_name': _('First name'),
+            'last_name': _('Last name'),
+            'phone': _('Phone'),
+            'address': _('Address'),
+            'city': _('City'),
+            'country': _('Country'),
+            'profile_picture': _('Profile picture')
+        }
+        widgets = {
+            'email': forms.EmailInput(attrs={
+                'class': 'form-control form__email',
+                'placeholder': 'Email'
+            }),
+            'first_name': forms.TextInput(attrs={
+                'class': 'form-control form__first-name',
+                'placeholder': 'First name'
+            }),
+            'last_name': forms.TextInput(attrs={
+                'class': 'form-control form__last-name',
+                'placeholder': 'Last name'
+            }),
+            'phone': forms.TextInput(attrs={
+                'class': 'form-control form__phone',
+                'placeholder': 'Phone'
+            }),
+            'address': forms.TextInput(attrs={
+                'class': 'form-control form__address',
+                'placeholder': 'Address'
+            }),
+            'city': forms.TextInput(attrs={
+                'class': 'form-control form__city',
+                'placeholder': 'City'
+            }),
+            'country': forms.TextInput(attrs={
+                'class': 'form-control form__country',
+                'placeholder': 'Country'
+            }),
+            'profile_picture': forms.FileInput(attrs={
+                'class': 'form-control form__profile-picture'
+            })
+        }
+        
