@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.contrib.auth import get_user_model
 
 from .models import Recipe
 from .forms import RecipeForm
@@ -51,4 +52,18 @@ def update_recipe_view(request, recipe_id):
         form = RecipeForm(instance=recipe)
     return render(request, 'recipe/update_recipe.html', { 'form': form, 'recipe': recipe })
 
+# View for the delete recipe page
+def delete_recipe_view(request, recipe_id):
+    recipe = Recipe.objects.get(pk=recipe_id)
+    recipe.delete()
+    return redirect(reverse('recipe:all_recipes'))
+
+# View for the user's recipes page
+def user_recipes_view(request, user_id):
+    user = get_user_model().objects.get(pk=user_id)
+    user_recipes = Recipe.objects.filter(author=user.id)
+    return render(request, 'recipe/user_recipes.html', {
+        'recipes': user_recipes,
+        'user': user,
+    })
 

@@ -4,7 +4,11 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 
-from .forms import RegisterForm, LoginForm
+from .forms import (
+    RegisterForm,
+    LoginForm,
+    UserChangeForm
+)
 
 # View for the register page
 def register_view(request):
@@ -52,3 +56,14 @@ def logout_view(request):
 def profile_view(request):
     profile = get_user_model().objects.get(pk=request.user.pk)
     return render(request, 'users/profile.html', { 'profile': profile })
+
+# View for the edit profile page
+def edit_profile_view(request):
+    if request.method == 'POST':
+        form = UserChangeForm(request.POST, request.FILES, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('users:profile'))
+    else:
+        form = UserChangeForm(instance=request.user)
+    return render(request, 'users/edit_profile.html', { 'form': form })
