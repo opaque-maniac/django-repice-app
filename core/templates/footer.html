@@ -1,14 +1,20 @@
 <!-- This is the footer section -->
 
-<footer>
+<footer class="footer">
     <h2 class="footer__title">Thanks for visiting</h2>
     <nav class="footer__nav">
         <ul class="footer__list">
-            <li class="footer__list-item"><a href="{% url 'core:about' %}">About</a></li>
-            <li class="footer__list-item"><a href="{% url 'core:contact' %}">Contact</a></li>
-            <li class="footer__list-item"><a href="{% url 'recipe:all_recipes' %}">Recipes</a></li>
-            <li class="footer__list-item"><a href="{% url 'core:terms' %}">Terms & Condition</a></li>
+            <p class="footer__list-title">Quick Links</p>
+            <li class="footer__list-item"><a href="{% url 'core:about' %}" target="_blank">About</a></li>
+            <li class="footer__list-item"><a href="{% url 'core:contact' %}" target="_blank">Contact</a></li>
+            <li class="footer__list-item"><a href="{% url 'recipe:all_recipes' %}" target="_blank">Recipes</a></li>
+            <li class="footer__list-item"><a href="{% url 'core:terms' %}" target="_blank">Terms & Condition</a></li>
         </ul>
     </nav>
     <p class="footer__copyright"></p>
 </footer>
+
+<script type="text/javascript">
+    let year = new Date().getFullYear();
+    document.querySelector('.footer__copyright').textContent = `© ${year} - ${year + 1} Flavor Fusion`;
+</script>
