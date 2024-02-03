@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from ckeditor_uploader.fields import RichTextUploadingField
+from ckeditor.fields import RichTextField
 
 # Model for the recipe itself
 class Recipe(models.Model):
@@ -21,7 +21,7 @@ class Recipe(models.Model):
     category = models.CharField(max_length=10, choices=CATEGORY_CHOICES, default=BREAKFAST)
     cover_image = models.ImageField(upload_to='recipe_images/', null=True, blank=True)
     description = models.CharField(max_length=500)
-    content = RichTextUploadingField()
+    content = RichTextField()
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
 

@@ -8,7 +8,11 @@
     <meta property="og:description" content="{{ recipe.description }}">
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ request.scheme }}://{{ request.host }}{% url 'recipe:recipe_detail' recipe.id %}">
-    <meta property="og:image" content="{{ recipe.cover_image.url }}">
+    {% if recipe.cover_image %}
+        <meta property="og:image" content="{{ request.scheme }}://{{ request.host }}{{ recipe.cover_image.url }}">
+    {% else %}
+        <meta property="og:image" content="{{ request.scheme }}://{{ request.host }}{% static 'core/img/default.png' %}">
+    {% endif %}
     <meta property="og:image:width" content="900">
     <meta property="og:image:height" content="900">
 
@@ -17,7 +21,11 @@
     <meta name="twitter:title" content="{{ recipe.title }}">
     <meta name="twitter:description" content="{{ recipe.description }}">
     <meta name="twitter:url" content="{{ request.scheme }}://{{ request.host }}{% url 'recipe:recipe_detail' recipe.id %}">
-    <meta name="twitter:image" content="{{ recipe.cover_image.url }}">
+    {% if recipe.cover_image %}
+        <meta name="twitter:image" content="{{ recipe.cover_image.url }}">
+    {% else %}
+        <meta name="twitter:image" content="{% static 'core/img/default.png' %}">
+    {% endif %}
     <meta name="twitter:image:width" content="900">
     <meta name="twitter:image:height" content="900">
 
@@ -42,8 +50,16 @@
     <p class="recipe__description">{{ recipe.description }}</p>
     <p class="recipe__date-created">Created on {{ recipe.date_created }}</p>
     <p class="recipe__date-updated">Last updated on {{ recipe.date_updated }}</p>
+    {% if request.user == recipe.author %}
+        <a href="{% url 'recipe:update_recipe' recipe.id %}" class="btn btn--primary">Update</a>
+        <a href="{% url 'recipe:delete_recipe' recipe.id %}" class="btn btn--danger">Delete</a>
+    {% endif %}
     <div class="recipe__image">
-        <img src="{{ recipe.cover_image.url }}" alt="{{ recipe.title }}">
+        {% if recipe.cover_image %}
+            <img src="{{ recipe.cover_image.url }}" alt="{{ recipe.title }}">
+        {% else %}
+            <img src="{% static 'core/img/default.png' %}" alt="{{ recipe.title }}">
+        {% endif %}
     </div>
     <p class="recipe__author">By <span><a href="{% url 'recipe:user_recipes' recipe.author.id %}">{{ recipe.author.first_name }} {{ recipe.author.last_name }}</a></span></p>
 

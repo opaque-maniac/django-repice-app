@@ -9,18 +9,9 @@ from .models import Recipe
 from .forms import RecipeForm
 
 # View for all the recipes page
+@login_required
 def all_recipes_view(request):
-    all_recipes = Recipe.objects.all().prefetch_related('images').all()[:1]
-    recipes_per_page = 15
-    paginator = Paginator(all_recipes, recipes_per_page)
-    page = request.GET.get('page')
-    try:
-        recipes = paginator.page(page)
-    except PageNotAnInteger:
-        recipes = paginator.page(1)
-    except EmptyPage:
-        recipes = paginator.page(paginator.num_pages)
-
+    recipes = Recipe.objects.all()
     return render(request, 'recipe/all_recipes.html', { 'recipes': recipes })
 
 # View for the recipe detail page
@@ -47,13 +38,12 @@ def new_recipe_view(request):
 @login_required
 def update_recipe_view(request, recipe_id):
     recipe = Recipe.objects.get(pk=recipe_id)
-
     # If the user is not the author of the recipe, raise a 404
     if request.user != recipe.author:
         raise Http404('You are not the author of this recipe.')
 
     if request.method == 'POST':
-        form = RecipeForm(request.POSTz, request.FILES, instance=recipe)
+        form = RecipeForm(request.POST, request.FILES, instance=recipe)
         if form.is_valid():
             recipe = form.save()
             recipe.save()
@@ -75,18 +65,10 @@ def delete_recipe_view(request, recipe_id):
     return redirect(reverse('recipe:all_recipes'))
 
 # View for the user's recipes page
+@login_required
 def user_recipes_view(request, user_id):
     user = get_user_model().objects.get(pk=user_id)
-    user_recipes = Recipe.objects.filter(author=user.id)
-    recipes_per_page = 6
-    paginator = Paginator(user_recipes, recipes_per_page)
-    page = request.GET.get('page')
-    try:
-        recipes = paginator.page(page)
-    except PageNotAnInteger:
-        recipes = paginator.page(1)
-    except EmptyPage:
-        recipes = paginator.page(paginator.num_pages)
+    recipes = Recipe.objects.filter(author=user.id)
     return render(request, 'recipe/user_recipes.html', {
         'recipes': recipes,
         'profile': user,

@@ -5,6 +5,13 @@ class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
         fields = ['title', 'category', 'description', 'content', 'cover_image']
+        labels = {
+            'title': 'Title',
+            'category': 'Category',
+            'description': 'Description',
+            'content': '',
+            'cover_image': 'Cover Image'
+        }
         widgets = {
             'title': forms.TextInput(attrs={
                 'class': 'form-control form__title',

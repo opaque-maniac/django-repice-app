@@ -36,8 +36,12 @@
         <ul class="recipe__list">
             {% for recipe in recipes %}
             <li class="recipe__item">
-                <a href="{% url 'recipe:recipe' recipe.id %}" class="recipe__link">
-                    <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" class="recipe__image">
+                <a href="{% url 'recipe:recipe_detail' recipe.id %}" class="recipe__link">
+                    {% if recipe.cover_image %}
+                    <img src="{{ recipe.cover_image.url }}" alt="{{ recipe.title }}" class="recipe__image">
+                    {% else %}
+                    <img src="{% static 'core/img/default.png' %}" alt="{{ recipe.title }}" class="recipe__image">
+                    {% endif %}
                     <h3 class="recipe__title">{{ recipe.title }}</h3>
                 </a>
             </li>
@@ -45,24 +49,6 @@
             <p class="no__recipe-text">No recipes yet</p>
             {% endfor %}
         </ul>
-
-        <div class="pagination">
-            <span class="step-links">
-                {% if recipes.has_previous %}
-                <a href="?page=1">&laquo; first</a>
-                <a href="?page={{ recipes.previous_page_number }}">previous</a>
-                {% endif %}
-
-                <span class="current">
-                    Page {{ recipes.number }} of {{ recipes.paginator.num_pages }}.
-                </span>
-
-                {% if recipes.has_next %}
-                <a href="?page={{ recipes.next_page_number }}">next</a>
-                <a href="?page={{ recipes.paginator.num_pages }}">last &raquo;</a>
-                {% endif %}
-            </span>
-        </div>
     </article>
 </section>
 {% endblock content %}

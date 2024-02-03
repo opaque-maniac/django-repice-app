@@ -12,6 +12,8 @@ class TestUserModel(TestCase):
             'password': 'testpassword'
         }
         self.user = get_user_model().objects.create_user(**self.user_credentials)
+        self.user.save()
+
         self.superuser_credentials = {
             'email': 'super@example.com',
             'first_name': 'Super',
@@ -19,6 +21,7 @@ class TestUserModel(TestCase):
             'password': 'superpassword'
         }
         self.super_user = get_user_model().objects.create_superuser(**self.superuser_credentials)
+        self.super_user.save()
     
     def test_create_user(self):
         user = get_user_model().objects.get(id=1)
@@ -43,6 +46,10 @@ class TestUserModel(TestCase):
     def test_user_str(self):
         user = get_user_model().objects.get(id=1)
         self.assertEqual(str(user), f'{user.id} : {self.user_credentials["first_name"]} {self.user_credentials["last_name"]}')
+    
+    def tearDown(self):
+        self.user.delete()
+        self.super_user.delete()
 
 
 # Test the login page view
@@ -55,6 +62,7 @@ class TestLoginView(TestCase):
             'password': 'testpassword'
         }
         self.user = get_user_model().objects.create_user(**self.credentials)
+        self.user.save()
 
     def test_response_code(self):
         response = self.client.get('/users/login/')
@@ -71,6 +79,9 @@ class TestLoginView(TestCase):
     def test_login(self):
         response = self.client.post(reverse('users:login'), self.credentials, follow=True)
         self.assertEqual(response.status_code, 200)
+    
+    def tearDown(self):
+        self.user.delete()
 
 # Test for the register page view
 class TestRegisterView(TestCase):
@@ -108,6 +119,7 @@ class TestLogoutView(TestCase):
             'password': 'testpassword'
         }
         self.user = get_user_model().objects.create_user(**self.credentials)
+        self.user.save()
     
     def test_response_code(self):
         response = self.client.get('/users/logout/')
@@ -116,6 +128,9 @@ class TestLogoutView(TestCase):
     def test_response_code_name(self):
         response = self.client.get(reverse('users:logout'))
         self.assertEqual(response.status_code, 302)
+    
+    def tearDown(self):
+        self.user.delete()
 
 # Test for the profile page view
 class TestProfileView(TestCase):
@@ -127,6 +142,7 @@ class TestProfileView(TestCase):
             'password': 'testpassword'
         }
         self.user = get_user_model().objects.create_user(**self.credentials)
+        self.user.save()
     
     def test_response_code(self):
         response = self.client.get('/users/profile/')
@@ -139,6 +155,9 @@ class TestProfileView(TestCase):
     def test_redirect(self):
         response = self.client.get(reverse('users:profile'))
         self.assertRedirects(response, '/users/login/?next=/users/profile/')
+    
+    def tearDown(self):
+        self.user.delete()
 
 # Test for the edit profile page view
 class TestEditProfileView(TestCase):
@@ -150,6 +169,7 @@ class TestEditProfileView(TestCase):
             'password': 'testpassword'
         }
         self.user = get_user_model().objects.create_user(**self.credentials)
+        self.user.save()
     
     def test_response_code(self):
         response = self.client.get('/users/profile/edit/')
@@ -162,4 +182,7 @@ class TestEditProfileView(TestCase):
     def test_redirect(self):
         response = self.client.get(reverse('users:edit_profile'))
         self.assertRedirects(response, '/users/login/?next=/users/profile/edit/')
+    
+    def tearDown(self):
+        self.user.delete()
 

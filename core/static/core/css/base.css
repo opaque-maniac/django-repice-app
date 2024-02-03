@@ -10,7 +10,7 @@
     --color-secondary: #F9A825;
     --color-background: #010101;
     --color-accent: #4CAF50;
-    --color-text: #333333;
+    --color-text-secondary: #333333;
     --color-border-accent: #CCCCCC;
 }
 
@@ -18,6 +18,7 @@ body {
     margin: 0;
     padding: 0;
     border: 0;
+    width: 100vw;
 }
 
 html {
