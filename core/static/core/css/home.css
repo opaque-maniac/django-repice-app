@@ -1,2 +1,119 @@
 /* Import the base file */
 @import url('./base.css');
+
+/* For the all images */
+.intro__container img,
+.info__container img,
+.call__container img {
+    width: 50vw;
+    height: auto;
+    border-radius: 10px;
+    padding: 1rem;
+    object-fit: cover;
+}
+
+/* For the call to action image */
+.call__container img {
+    height: 500px;
+    width: auto;
+}
+
+/* For the call text */
+.call_text {
+    width: 50vw;
+}
+
+
+/* For the intro and call to action images */
+.intro__container img,
+.call__container img {
+    border-top: 2px solid var(--color-text-secondary);
+    border-left: 2px solid var(--color-text-secondary); 
+}
+
+/* For the intro and call to action containers */
+.intro__container,
+.call__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 5rem;
+    background-color: var(--color-primary);
+    text-align: end;
+}
+
+/* For the intro title */
+.intro__title,
+.info__title,
+.call__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* For the info container */
+.info__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 5rem;
+    background-color: var(--color-secondary);
+    text-align: start;
+}
+
+/* For the info image */
+.info__container img {
+    border-bottom: 2px solid var(--color-text-secondary);
+    border-right: 2px solid var(--color-text-secondary); 
+    order: 2;
+}
+
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) 
+    and (max-device-width: 1024px) {
+    
+}
+ 
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) 
+    and (orientation: portrait) {
+    /* For all the images on the page */
+    .intro__container img,
+    .info__container img,
+    .call__container img {
+        width: 90vw;
+        margin: 5px auto;
+        height: 236px;
+        border-width: 2px;
+    }
+    
+    /* For the all the containersr */
+    .intro__container,
+    .info__container,
+    .call__container  {
+        display: block;
+        padding: 0.5rem;
+        gap: unset;
+        text-align: center;
+    }
+
+    /* For all the text text */
+    .intro__text,
+    .info__text,
+    .call__text {
+        padding: 0 1rem;
+    }
+}
+ 
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 930px) 
+    and (orientation: landscape) {
+    
+}

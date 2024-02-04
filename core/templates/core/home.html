@@ -1,29 +1,29 @@
 {% extends "base.html" %}{% load static %}
 {% block meta %}
-    <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
-    <meta property="og:title" content="Flavor Fusion">
-    <meta property="og:description" content="Flavor fusion, one stop for all recipes">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ request.scheme }}://{{ request.host }}{% url 'core:home' %}">
-    <meta property="og:image" content="{{ request.scheme }}://{{ request.host }}{% static 'core/img/flavor-fushion' %}">
-    <meta property="og:image:width" content="900">
-    <meta property="og:image:height" content="900">
+<!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
+<meta property="og:title" content="Flavor Fusion">
+<meta property="og:description" content="Flavor fusion, one stop for all recipes">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ request.scheme }}://{{ request.host }}{% url 'core:home' %}">
+<meta property="og:image" content="{{ request.scheme }}://{{ request.host }}{% static 'core/img/flavor-fushion' %}">
+<meta property="og:image:width" content="900">
+<meta property="og:image:height" content="900">
 
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="Flavor Fusion">
-    <meta name="twitter:title" content="Flavor fusion">
-    <meta name="twitter:description" content="Flavor fusion, one stop for all recipes">
-    <meta name="twitter:url" content="{{ request.scheme }}://{{ request.host }}{% url 'core:home' %}">
-    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.host }}{% static 'core/img/flavor-fushion' %}">
-    <meta name="twitter:image:width" content="900">
-    <meta name="twitter:image:height" content="900">
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="Flavor Fusion">
+<meta name="twitter:title" content="Flavor fusion">
+<meta name="twitter:description" content="Flavor fusion, one stop for all recipes">
+<meta name="twitter:url" content="{{ request.scheme }}://{{ request.host }}{% url 'core:home' %}">
+<meta name="twitter:image" content="{{ request.scheme }}://{{ request.host }}{% static 'core/img/flavor-fushion' %}">
+<meta name="twitter:image:width" content="900">
+<meta name="twitter:image:height" content="900">
 
-    <!-- Additional Meta Tags (optional) -->
-    <meta name="author" content="Opaque Maniac">
-    <meta name="description" content="flavor fusion, website to get any recipe you need">
+<!-- Additional Meta Tags (optional) -->
+<meta name="author" content="Opaque Maniac">
+<meta name="description" content="flavor fusion, website to get any recipe you need">
 {% endblock %}
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'core/css/home.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'core/css/home.css' %}">
 {% endblock css %}
 {% block title %}Home{% endblock %}
 {% block content %}
@@ -34,59 +34,50 @@
     <div class="intro__container">
         <img class="intro__image" src="{% static 'core/img/home-intro-img.jpg' %}" alt="bowl of ramen">
         <p class="into__paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-            Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-            sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-            Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-            sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-            Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-            sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-            Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-            sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Welcome to FlavorFushion, where culinary inspiration meets simplicity! Our passion for delicious and diverse
+            flavors is reflected in every recipe we curate. Whether you're a seasoned chef or a kitchen novice, our goal
+            is to make cooking an enjoyable experience for everyone. Explore a world of mouthwatering recipes, culinary
+            tips, and easy-to-follow instructions that will elevate your home-cooked meals. Join us on a culinary
+            journey that celebrates the joy of good food, shared with those you love. Let's turn your kitchen into a
+            place of creativity and delectable memories!
         </p>
     </div>
 </section>
 <section class="section section__info transparent">
-    <h2 class="info__title">About</h2>
-    <p class="info__text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-        et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat.
-        Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-        et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat.
-        Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+    <h2 class="info__title">About us</h2>
+    <div class="info__container">
+        <img class="info__image" src="{% static 'core/img/about-image.jpg' %}" alt="a family cooking">
+        <p class="info__text">
+            At FlavorFushion, our story is as flavorful as the recipes we share. Founded with a shared love for cooking
+            and a belief in the power of a well-cooked meal to bring people together, our platform is a celebration of
+            culinary
+            exploration. What started as a personal journey through kitchen experiments has evolved into a vibrant
+            community where
+            food enthusiasts, both seasoned chefs and kitchen newcomers, come together. Our mission is simple: to
+            inspire and
+            simplify your cooking experience. Join us as we share our culinary adventures, tips, and a collection of
+            recipes that
+            have become cherished favorites. At FlavorFushion, we believe that a shared meal is not just a moment in
+            time but a memory in the making. Welcome to our kitchen; we're thrilled to have you here!
+        </p>
+    </div>
+</section>
+<section class="section section__call">
+    <h2 class="call__title">Start Your Culinary Adventure Today!</h2>
+    <div class="call__container">
+        <img class="call__image" src="{% static 'core/img/call-image.jpg' %}" alt="a beautiful spread for dinner">
+        <p class="call__text">
+            Are you ready to embark on a journey of delightful flavors and culinary creativity? Dive into our collection
+            of
+            mouthwatering recipes that cater to every taste and skill level. Whether you're a seasoned chef or a kitchen
+            novice,
+            there's something here for everyone. Join us in making cooking an enjoyable and rewarding experience. Click
+            below to
+            explore our recipes, discover kitchen tips, and transform your meals from ordinary to extraordinary. Let the
+            culinary
+            adventure begin – start cooking with passion and purpose today!
+        </p>
+    </div>
 </section>
 {% endblock content %}
 {% block js %}
