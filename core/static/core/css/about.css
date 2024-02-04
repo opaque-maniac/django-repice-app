@@ -1,2 +1,129 @@
 /* Import the base file */
 @import url('./base.css');
+
+/* For the all the titles */
+.section__title,
+.founder__name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* The section title */
+.section__title {
+    font-size: 2rem;
+}
+
+/* The founder name */
+.founder__name {
+    font-size: 2rem;
+}
+
+/* For the about section text */
+.about__section .section__text {
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* For the founder images */
+.founder__detail img {
+    width: 40vw;
+    height: 70vh;
+    border-radius: 10px;
+    padding: 1rem;
+    object-fit: cover;
+    object-position: top;
+}
+.normal-img {
+    border-left: 2px solid var(--color-text-secondary);
+    border-top: 2px solid var(--color-text-secondary);
+    border-right: none;
+    border-bottom: none;
+}
+.alternate-img {
+    border-left: none;
+    border-top: none;
+    border-right: 2px solid var(--color-text-secondary);
+    border-bottom: 2px solid var(--color-text-secondary);
+}
+.color-secondary img {
+    order: 2;
+}
+
+
+.founder__detail .section__image,
+.founder__detail .section__text {
+    width: 40vw;
+}
+.alternate-text {
+    text-align: end;
+}
+
+
+/* For the founder detail container */
+.founder__detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 5rem;
+}
+
+/* For containers with primary background color */
+.color-primary {
+    background-color: var(--color-primary);
+}
+
+/* For containers with secondary background color */
+.color-secondary {
+    background-color: var(--color-secondary);
+}
+
+
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) 
+    and (max-device-width: 1024px) {
+    
+}
+ 
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) 
+    and (orientation: portrait) {
+
+    /* For the founder images */
+    .founder__detail img {
+        width: 90vw;
+        margin: 5px auto;
+        height: 300px;
+        border-width: 2px;
+    }
+
+    /* For the founder detail container */
+    .founder__detail {
+        display: block;
+        padding: 0 1rem;
+    }
+
+    .founder__detail .section__image,
+    .founder__detail .section__text {
+        width: auto;
+    }
+    .section__text {
+        text-align: center;
+    }
+
+    /* For the about section text */
+    .about__section .section__text {
+        padding: 0 5px;
+    }
+}
+ 
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 930px) 
+    and (orientation: landscape) {
+    
+}

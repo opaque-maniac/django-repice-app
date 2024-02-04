@@ -29,63 +29,92 @@
 {% block content %}
 <!-- Template for the about page -->
 
-    <section class="section">
-        <h2 class="section__title">About us</h2>
-        <h3 class="founder__name">Malik Thompson</h3>
+    <section class="section about__section">
+        <h2 class="section__title">Our Culinary Story</h2>
         <article class="section__article">
-            <img class="section__img" src="{% static 'core/img/founder-one.jpg' %}" alt="">
             <p class="section__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-            Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-            sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Welcome to FlavorFushion, where our culinary journey unfolds into a tapestry 
+                of flavors and shared moments. Our story is one of passion, experimentation, 
+                and a shared love for bringing people together through the joy of cooking. 
+                Founded by Aisha Foster, our platform is more than just a collection of 
+                recipes; it's a testament to the belief that a well-cooked meal has the power 
+                to create lasting memories. As avid food enthusiasts, we invite you to delve 
+                into our kitchen adventures, learn about our inspirations, and discover the 
+                heart behind each recipe. Join us on this flavorful exploration as we turn 
+                ordinary ingredients into extraordinary dishes. This is our culinary story - 
+                a celebration of the love and creativity that food brings to our lives.
             </p>
+    </section>
+    <section class="section founders__section">
+        <h2 class="section__title">Founders</h2>
+        <article class="section__article">
+            <h3 class="founder__name">A Journey Through Flavor with <span class="name">Aisha Foster</span></h3>
+            <div class="founder__detail color-primary">
+                <img class="section__img normal-img" src="{% static 'core/img/founder-two.jpg' %}" alt="Aisha Foster">
+                <p class="section__text">
+                    Meet Aisha Foster, the heart and soul behind FlavorFushion. Aisha's culinary tale 
+                    unfolds with a passion deeply rooted in her family's kitchen traditions, where love 
+                    and creativity were essential ingredients. From her early days experimenting with simple 
+                    desserts to crafting intricate dishes inspired by diverse cultures, Aisha's kitchen is a 
+                    canvas of culinary expression. Drawn by a desire to share her culinary discoveries, Aisha 
+                    founded FlavorFushion. Through her platform, Aisha invites you to join her on a gastronomic 
+                    adventure, where every recipe tells a unique story and each meal becomes a celebration of flavors. 
+                    Embrace the spirit of Aisha Foster's culinary journey and discover the joy of cooking that she 
+                    brings to every dish. Welcome to the world of FlavorFushion, where Aisha's love for food becomes 
+                    a shared experience for all.
+                </p>
+            </div>
         </article>
-        <h3 class="founder__name">Aisha Foster</h3>
         <article class="section__article">
-            <img class="section__img" src="{% static 'core/img/founder-two.jpg' %}" alt="">
-            <p class="section__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-            Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-            sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <h3 class="founder__name">The Culinary Odyssey of <span class="name">Malik Thompson</span></h3>
+            <div class="founder__detail color-secondary">
+                <img class="section__img alternate-img" src="{% static 'core/img/founder-one.jpg' %}" alt="Malik Thompson">
+                <p class="section__text alternate-text">
+                Meet Malik Thompson, the creative force behind FlavorFushion. Malik's culinary 
+                journey began with a childhood steeped in the rich aromas of his grandmother's 
+                kitchen. Inspired by these flavorful memories, Malik developed a passion for 
+                turning ordinary ingredients into extraordinary dishes. From perfecting family 
+                recipes to experimenting with global cuisines, Malik's kitchen became a haven for 
+                culinary exploration. One day, after crafting a show-stopping fusion dish, Malik 
+                envisioned a platform where he could share his love for cooking with a wider audience. 
+                And so, FlavorFushion was born. Join Malik on this flavorful adventure, where every recipe 
+                is a chapter in his culinary story, and each dish is a masterpiece waiting to be savored.
+                </p>
+            </div>
         </article>
-        <h3 class="founder__name">Marcus Bennett</h3>
-        <article class="section__article">
-            <img class="section__img" src="{% static 'core/img/founder-three.jpg' %}" alt="">
-            <p class="section__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-            Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-            sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+        <article class="section__article atlernate">
+            <h3 class="founder__name">Unveiling Flavorful Chapters with <span class="name">Marcus Bennett</span></h3>
+            <div class="founder__detail color-primary">
+                <img class="section__img normal-img" src="{% static 'core/img/founder-three.jpg' %}" alt="Marcus Bennet">
+                <p class="section__text alternate-text">
+                    Embark on a culinary voyage with Marcus Bennett, the creative mind behind FlavorFushion. 
+                    Marcus's gastronomic journey traces back to the warmth of family kitchens, where the art of 
+                    cooking became a form of self-expression. From mastering classic recipes to fearlessly 
+                    experimenting with innovative flavors, Marcus's kitchen is a haven for culinary exploration. 
+                    Motivated by a desire to inspire others, Marcus founded FlavorFushion, inviting 
+                    you to step into his world of enticing aromas and delectable tastes. Join Marcus on a flavorful 
+                    expedition, where each recipe is a chapter in his culinary story, and every dish is an invitation 
+                    to savor the beauty of diverse cuisines. Immerse yourself in the world of Marcus Bennett, and let 
+                    the joy of cooking become your own.
+                </p>
+            </div>
         </article>
-        <h3 class="founder__name">Nia Reynolds</h3>
         <article class="section__article">
-            <img class="section__img" src="{% static 'core/img/founder-four.jpg' %}" alt="">
-            <p class="section__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-            Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-            sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <h3 class="founder__name">Crafting Culinary Harmony with <span class="name">Nia Reynolds</span></h3>
+            <div class="founder__detail color-secondary">
+                <img class="section__img alternate-img" src="{% static 'core/img/founder-four.jpg' %}" alt="Nia Reynolds">
+                <p class="section__text">
+                    Discover the culinary world through the eyes of Nia Reynolds, the driving force behind FlavorFushion. 
+                    Nia's culinary narrative is woven with threads of tradition, innovation, and a deep-rooted passion for 
+                    the art of cooking. From learning cherished family recipes to infusing her dishes with contemporary 
+                    flair, Nia's kitchen is a canvas of culinary harmony. With a vision to share the joy of cooking, Nia 
+                    established FlavorFushion, inviting you to partake in her flavorful journey. Join Nia as she unravels 
+                    the secrets behind each recipe, turning ordinary moments into extraordinary culinary experiences. Indulge 
+                    in the diverse and delightful world curated by Nia Reynolds, where every dish tells a story, and the pleasure 
+                    of sharing good food becomes a universal language. Welcome to a kitchen where Nia's culinary expertise 
+                    becomes an inspiration for all who savor the beauty of a well-cooked meal.
+                </p>
+            </div>
         </article>
     </section>
 {% endblock content %}

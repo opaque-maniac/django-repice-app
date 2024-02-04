@@ -74,6 +74,14 @@
     order: 2;
 }
 
+/* For the last image */
+#last {
+    height: 400px;
+    object-position: top;
+    object-fit: fill;
+    width: auto;
+}
+
 
 /* For Tablet View */
 @media screen and (min-device-width: 768px) 
@@ -109,6 +117,11 @@
     .info__text,
     .call__text {
         padding: 0 1rem;
+    }
+
+    /* For all the page sections */
+    .section {
+        padding-top: 5px;
     }
 }
  

@@ -44,6 +44,7 @@
     padding: 0 5rem;
     z-index: 3;
     background-color: var(--color-secondary);
+    border-bottom: 0.5px solid #000;
 }
 
 /* All links in the header */
@@ -135,6 +136,8 @@
     padding: 1rem;
 }
 
+
+
 /* For the footer links */
 .footer__list-item a {
     color: inherit;
@@ -145,6 +148,10 @@
 /* For footer list tile */
 .footer__list-title {
     font-style: italic;
+}
+
+.section {
+    border-radius: 10px;
 }
 
 
