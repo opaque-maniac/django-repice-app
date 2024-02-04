@@ -95,7 +95,8 @@
     /* For all the images on the page */
     .intro__container img,
     .info__container img,
-    .call__container img {
+    .call__container img,
+    #last {
         width: 90vw;
         margin: 5px auto;
         height: 236px;
