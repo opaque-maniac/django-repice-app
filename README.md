@@ -20,7 +20,10 @@
     You can clone the repository using the link below.
 </p>
 <div>
-    <img src="./readme_images/screenshots-3.png" alt="clpne imsgrs">
+    <img src="./readme_images/screenshots-3.png" alt="clone repository">
+</div>
+<div>
+    <img src="./readme_images/screenshot-9.png" alt="clone repository">
 </div>
 <p>
     Install the requirements of the repostitory in the project direcotory   
