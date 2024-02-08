@@ -1,0 +1,102 @@
+{% extends "base.html" %}{% load static %}
+{% block meta %}
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
+    <meta property="og:title" content="Recipes Flavor Fusion">
+    <meta property="og:description" content="All recipes on flavor fusion">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ request.scheme }}://{{ request.host }}{% url 'recipe:all_recipes' %}">
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.host }}{% static 'core/img/flavor-fushion' %}">
+    <meta property="og:image:width" content="900">
+    <meta property="og:image:height" content="900">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="Recipes Flavor Fusion">
+    <meta name="twitter:title" content="Recipes Flavor Fusion">
+    <meta name="twitter:description" content="All recipes on flavor fusion">
+    <meta name="twitter:url" content="{{ request.scheme }}://{{ request.host }}{% url 'recipe:all_recipes' %}">
+    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.host }}{% static 'core/img/flavor-fushion' %}">
+    <meta name="twitter:image:width" content="900">
+    <meta name="twitter:image:height" content="900">
+
+    <!-- Additional Meta Tags (optional) -->
+    <meta name="author" content="Opaque Maniac">
+    <meta name="description" content="all recipes on the flavor fushion platform">
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'recipe/css/explore.css' %}">
+{% endblock css %}
+{% block title %}All recipes{% endblock %}
+{% block content %}
+
+<!-- This section contains all recipes -->
+
+<section class="section">
+    <div class="direction__button closed">
+        <svg class="arrow__right show" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="arrow__left hidden" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5303 5.46967C10.8232 5.76256 10.8232 6.23744 10.5303 6.53033L5.81066 11.25H20C20.4142 11.25 20.75 11.5858 20.75 12C20.75 12.4142 20.4142 12.75 20 12.75H5.81066L10.5303 17.4697C10.8232 17.7626 10.8232 18.2374 10.5303 18.5303C10.2374 18.8232 9.76256 18.8232 9.46967 18.5303L3.46967 12.5303C3.17678 12.2374 3.17678 11.7626 3.46967 11.4697L9.46967 5.46967C9.76256 5.17678 10.2374 5.17678 10.5303 5.46967Z" fill="#1C274C"/>
+        </svg>
+    </div>
+    <div class="side-nav">
+        <div class="form__container">
+            <form action="." method="get">
+                {% csrf_token %}
+                <input type="search" placholder="Query..." name="query">
+                <button type="submit">Search...</button>
+            </form>
+        </div>
+        <h3 class="categroy__title">Categories</h3>
+        <div class="pagenav">
+            <ul class="pagenav__list">
+                <li class="pagenav__list--item">
+                    <a href="{% url 'recipe:explore' %}?category=Breakfast" class="pagenav__link">Breakfast</a>
+                </li>
+                <li class="pagenav__list--item">
+                    <a href="{% url 'recipe:explore' %}?category=Lunch" class="pagenav__link">Lunch</a>
+                </li>
+                <li class="pagenav__list--item">
+                    <a href="{% url 'recipe:explore' %}?category=Dinner" class="pagenav__link">Dinner</a>
+                </li>
+                <li class="pagenav__list--item">
+                    <a href="{% url 'recipe:explore' %}?category=Dessert" class="pagenav__link">Dessert</a>
+                </li>
+                <li class="pagenav__list--item">
+                    <a href="{% url 'recipe:explore' %}?category=Beverages" class="pagenav__link">Beverages</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="page-main">
+        <h2 class="page__title">Recipes</h2>
+        <div class="post__container">
+            <ul class="recipe__list">
+                {% for recipe in recipes %}
+                    <li class="recipe__list--item">
+                        <a href="" class="recipe__link">
+                            {% if recipe.cover_image %}
+                                <img src="{{ recipe.cover_image.url }}" alt="{{ recipe.title }}" class="recipe__image">
+                            {% else %}
+                                <img src="{% static 'core/img/default.png' %}" alt="{{ recipe.title }}" class="recipe__image">
+                            {% endif %}
+                            <div class="recipe_detail">
+                                <h3 class="recipe__title"><span>{{ recipe.title }}</span></h3>
+                                <p class="recipe__author">By: <span>{{ recipe.author.first_name }} {{ recipe.author.last_name }}</span></p>
+                                <p class="recipe__category">Category: <span>{{ recipe.category }}</span></p>
+                                <p class="recipe__description">{{ recipe.description }}</p>
+                                <p class="recipe__date-created">{{ recipe.date_created }}</p>
+                            </div>
+                        </a>
+                    </li>
+                {% empty %}
+                    <p class="no__recipe-text">No recipes yet!</p>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+{% block js %}
+    <script type="text/javascript" src="{% static 'recipe/js/explore.js' %}"></script>
+{% endblock js %}

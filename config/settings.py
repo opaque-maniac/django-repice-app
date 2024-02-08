@@ -208,4 +208,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # URLS for authentication redirect
 LOGIN_URL = 'users:login'
-LOGIN_REDIRECT_URL = 'core:home'
+LOGIN_REDIRECT_URL = 'recipe:all_recipes'

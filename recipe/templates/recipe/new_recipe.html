@@ -35,12 +35,22 @@
     <form class="recipe_form" method="POST" action=".">
         {% csrf_token %}
         <div class="form-outline">
-            {{form.as_p}}
+            {% for field in form %}
+                <div class="field__container">
+                    <div>
+                        <label for="field.label" class="field__label">{{ field.label }}</label>
+                        {{ field }}
+                    </div>
+                </div>
+                
+            {% endfor %}
             <br>
         </div>  
-        <!--Blog Text Area-->
-        {{form.media}}
-        <input type="submit">
+        <div class="media">
+            <!--Blog Text Area-->
+            {{form.media}}
+        </div>
+        <button type="submit" class="submit__button">Submit</button>
     </form>
 </section>
 {% endblock content %}

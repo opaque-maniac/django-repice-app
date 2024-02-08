@@ -28,8 +28,8 @@
 {% block title %}Sign In{% endblock %}
 {% block content %}
 <!-- Template for login -->
+<h2 class="section__title">Sign In</h2>
 <section class="section">
-    <h2 class="section__title">Sign In</h2>
     <form class="form login_form" method="post" action=".">
         {% csrf_token %}
         {% for field in form %}

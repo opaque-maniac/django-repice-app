@@ -8,12 +8,14 @@ class Recipe(models.Model):
     LUNCH = 'Lunch'
     DINNER = 'Dinner'
     DESSERT = 'Dessert'
+    BEVERAGES = 'Beverage'
     
     CATEGORY_CHOICES = [
         (BREAKFAST, 'Breakfast'),
         (LUNCH, 'Lunch'),
         (DINNER, 'Dinner'),
         (DESSERT, 'Dessert'),
+        (BEVERAGES, 'Beverage'),
     ]
 
     author = models.ForeignKey(get_user_model(), related_name='recipes', on_delete=models.CASCADE)

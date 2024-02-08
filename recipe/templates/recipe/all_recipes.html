@@ -40,10 +40,13 @@
                     <img src="{{ recipe.cover_image.url }}" alt="{{ recipe.title }}" class="recipe__image">
                     {% else %}
                     <img src="{% static 'core/img/default.png' %}" alt="{{ recipe.title }}" class="recipe__image">
-                    {% endif %}
+                {% endif %}
                 <div class="recipe_detail">
-                    <h3 class="recipe__title">{{ recipe.title }}</h3>
+                    <h3 class="recipe__title"><span>{{ recipe.title }}</span></h3>
+                    <p class="recipe__author">By: <span>{{ recipe.author.first_name }} {{ recipe.author.last_name }}</span></p>
+                    <p class="recipe__category">Category: <span>{{ recipe.category }}</span></p>
                     <p class="recipe__description">{{ recipe.description }}</p>
+                    <p class="recipe__date-created">{{ recipe.date_created }}</p>
                 </div>
             </a>
         </li>
@@ -54,4 +57,5 @@
 </section>
 {% endblock content %}
 {% block js %}
+    <script type="text/javascript" src="{% static 'recipe/js/all_recipes.js' %}"></script>
 {% endblock js %}

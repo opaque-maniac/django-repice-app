@@ -1,2 +1,144 @@
 /* Import the base file */
 @import url('./base.css');
+
+/* For the form */
+
+/* For all the title in the page */
+h2,
+h3 {
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+.section {
+    background-color: var(--color-primary);
+    margin-bottom: 2rem;
+}
+
+/* For the section title */
+.section__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    margin-top: 2rem;
+}
+
+/* For the section article */
+.section__article {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5rem;
+}
+
+/* For the labels */
+label {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* For the fields for input and textarea */
+input,
+textarea {
+    width: 90%;
+    margin: 0 6%;
+    border: 1px solid var(--color-text-secondary);
+    border-radius: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* For the submit button */
+button[type="submit"] {
+    display: block;
+    width: 50%;
+    padding: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+    border: 2px solid var(--color-text-secondary);
+    font-size: 1rem;
+    text-align: center;
+    background-color: var(--color-text-secondary);
+    color: var(--color-primary);
+}
+button[type="submit"]:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-secondary);
+}
+
+/* For both container */
+.links-container,
+.form-container {
+    width: 50vw;
+}
+
+/* For the link container */
+.links-container {
+    border-left: 1px solid #000;
+    padding: 1rem;
+}
+
+/* For the links */
+.contact-link {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #000;
+    margin: 1.5rem 0;
+    width: auto;
+}
+.contact-link:hover {
+    color: var(--color-text-secondary);
+}
+
+
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) 
+    and (max-device-width: 1024px) {
+    
+}
+ 
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) 
+    and (orientation: portrait) {
+    /* For the section article */
+    .section__article {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* For both container */
+    .links-container,
+    .form-container {
+        width: auto;
+    }
+
+    /* For the link container */
+    .links-container {
+        border-left: none;
+        border-top: 1px solid #000;
+    }
+
+    /* For the fields for input and textarea */
+    input,
+    textarea {
+        margin: 0 4%;
+    }
+}   
+ 
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 930px) 
+    and (orientation: landscape) {
+    
+}

@@ -4,6 +4,7 @@ const xIcon = document.querySelector('#x-icon');
 const navbar = document.querySelector('.navbar');
 const header = document.querySelector('.header');
 
+
 // Event listener for the menu icon
 menuIcon.addEventListener('click', () => {
     menuIcon.classList.add('hidden');
@@ -19,3 +20,4 @@ xIcon.addEventListener('click', () => {
     navbar.style.top = '-100%';
     header.style.borderBottom = '1px solid #000';
 });
+

@@ -43,8 +43,10 @@
         <li class="navbar__list-item"><a href="{% url 'core:contact' %}">Contact</a></li>
         <li class="navbar__list-item"><a href="{% url 'core:terms' %}">Terms & Condition</a></li>
         {% if user.is_authenticated %}
-        <li class="navbar__list-item"><a href="{% url 'recipe:all_recipes' %}">Recipes</a></li>
+        <li class="navbar__list-item"><a href="{% url 'recipe:explore' %}">Explore</a></li>
+        <li class="navbar__list-item"><a href="{% url 'recipe:all_recipes' %}">All Recipes</a></li>
         <li class="navbar__list-item"><a href="{% url 'recipe:new_recipe' %}">New Recipes</a></li>
+        <li class="navbar__list-item"><a href="{% url 'users:profile' %}">Profile</a></li>
         <li class="navbar__list-item"><a href="{% url 'users:logout' %}">Logout</a></li>
         {% else %}
         <li class="navbar__list-item"><a href="{% url 'users:login' %}">Login</a></li>

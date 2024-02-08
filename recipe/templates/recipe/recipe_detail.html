@@ -47,22 +47,30 @@
 
 <section class="section">
     <h2 class="recipe__title">{{ recipe.title }}</h2>
-    <p class="recipe__description">{{ recipe.description }}</p>
-    <p class="recipe__date-created">Created on {{ recipe.date_created }}</p>
-    <p class="recipe__date-updated">Last updated on {{ recipe.date_updated }}</p>
-    {% if request.user == recipe.author %}
-        <a href="{% url 'recipe:update_recipe' recipe.id %}" class="btn btn--primary">Update</a>
-        <a href="{% url 'recipe:delete_recipe' recipe.id %}" class="btn btn--danger">Delete</a>
-    {% endif %}
-    <div class="recipe__image">
-        {% if recipe.cover_image %}
-            <img src="{{ recipe.cover_image.url }}" alt="{{ recipe.title }}">
-        {% else %}
-            <img src="{% static 'core/img/default.png' %}" alt="{{ recipe.title }}">
-        {% endif %}
+    <div class="recipe__top">
+        <div class="recipe__detail">
+            <p class="recipe__description">{{ recipe.description }}</p>
+            <p class="recipe__category">Category: <a href="#">{{ recipe.category }}</a></p>
+            <p class="recipe__date-created">Created on {{ recipe.date_created }}</p>
+            <p class="recipe__date-updated">Last updated on {{ recipe.date_updated }}</p>
+            {% if request.user == recipe.author %}
+            <div class="recipe__actions">
+                <a href="{% url 'recipe:update_recipe' recipe.id %}" class="btn btn--primary">Update</a>
+                <a href="{% url 'recipe:delete_recipe' recipe.id %}" class="btn btn--danger">Delete</a>
+            </div>
+            {% endif %}
+            <p class="recipe__author">By <span><a href="{% url 'recipe:user_recipes' recipe.author.id %}">{{ recipe.author.first_name }} {{ recipe.author.last_name }}</a></span></p>
+        </div>
+        <div class="recipe__image">
+            {% if recipe.cover_image %}
+                <img src="{{ recipe.cover_image.url }}" alt="{{ recipe.title }}">
+            {% else %}
+                <img src="{% static 'core/img/default.png' %}" alt="{{ recipe.title }}">
+            {% endif %}
+        </div>
     </div>
-    <p class="recipe__author">By <span><a href="{% url 'recipe:user_recipes' recipe.author.id %}">{{ recipe.author.first_name }} {{ recipe.author.last_name }}</a></span></p>
 
+    <hr>
     <div class="recipe__content">
         <article>
             {{ recipe.content|safe }}

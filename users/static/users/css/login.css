@@ -1,2 +1,118 @@
 /* Import the base file */
-@import url('./base.css')
+@import url('./base.css');
+
+/* For title text */
+.section__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* For the labels */
+.form__group .form__label {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* For the form field container */
+.form__group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* For all the input fields */
+.form__group input {
+    width: 60%;
+    padding: 1rem;
+    margin: 0 auto;
+    border-radius: 2rem;
+    border: 2px solid var(--color-text-secondary);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* For the form section */
+.section {
+    background-color: var(--color-primary);
+    margin-bottom: 2rem;
+}
+
+/* For the submit button */
+button[type="submit"] {
+    display: block;
+    width: 10%;
+    padding: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    border-radius: 2rem;
+    border: 2px solid var(--color-text-secondary);
+    font-size: 1rem;
+    text-align: center;
+    background-color: var(--color-text-secondary);
+    color: var(--color-primary);
+}
+button[type="submit"]:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-secondary);
+}
+
+/* For the error message */
+.form__text--error {
+    color: red;
+    text-align: center;
+}
+
+/* For the alt link container */
+.alt-container {
+    text-align: center;
+    padding: 15px 0;
+}
+.alt-container a {
+    color: var(--color-text-secondary);
+}
+
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) 
+    and (max-device-width: 1024px) {
+    
+}
+ 
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) 
+    and (orientation: portrait) {
+    html {
+        font-size: initial;
+    }
+    /* For title text */
+    .section__title {
+        font-size: 1.5rem;
+    }
+
+    /* For all the input fields */
+    .form__group input {
+        width: 90%;
+        padding: 1rem;
+        margin: 0 auto;
+        border-radius: 2rem;
+        border: 2px solid var(--color-text-secondary);
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    /* For the submit button */
+    button[type="submit"] {
+        width: 50%;
+    }
+}
+ 
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 930px) 
+    and (orientation: landscape) {
+    
+}

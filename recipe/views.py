@@ -74,3 +74,16 @@ def user_recipes_view(request, user_id):
         'profile': user,
     })
 
+# The explore page view
+def explore(request):
+    category = request.GET.get('category')
+    query = request.GET.get('query')
+    recipes = Recipe.objects.all()
+
+    if category:
+        recipes = recipes.filter(category=category)
+    
+    if query:
+        recipes = recipes.filter(title__icontains=query)
+    
+    return render(request, 'recipe/explore.html', { 'recipes': recipes })

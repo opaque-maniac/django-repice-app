@@ -1,2 +1,126 @@
 /* Import the base file */
 @import url('./base.css');
+
+/* For the recipe list item */
+.recipe__item {
+    margin: 0;
+    padding: 0;
+}
+
+/* For the section title */
+.section__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* For the ul */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* For the recipe link */
+.recipe__link {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding-left: 2rem;
+    gap: 3rem;
+    align-items: center;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    transition: transform 0.2s ease-in;
+    background-color: var(--color-primary);
+}
+
+/* For the recipe link hover */
+.recipe__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
+    padding: 0 1rem;
+}
+
+/* For the recipe image */
+.recipe__image {
+    width: 25vw;
+    height: 20vw;
+    padding: 1rem;
+    border-top: 2px solid var(--color-text-secondary);
+    border-left: 2px solid var(--color-text-secondary);
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* For recipe links with noraml background */
+.background-normal {
+    background-color: var(--color-primary);
+}
+
+/* For recipe links with alternate background */
+.background-alternative {
+    background-color: var(--color-secondary);
+}
+
+/* For no recipe text */
+.no__recipe-text {
+    min-height: 50vh;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    font-size: 2rem;
+    font-family: var(--font-family-secondary);
+    color: var(--color-text-secondary);
+    padding-top: 5rem;
+}
+
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) 
+    and (max-device-width: 1024px) {
+    
+}
+ 
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) 
+    and (orientation: portrait) {
+    html {
+        font-size: 1rem;
+    }
+    /* For the recipe link */
+    .recipe__link {
+        display: block;
+    }
+
+    /* For the recipe link hover */
+    .recipe__list {
+        display: block;
+    }
+
+    /* For the recipe image */
+    .recipe__image {
+        width: 75vw;
+        height: 35vh;
+        padding: 1rem;
+        border-top: 2px solid var(--color-text-secondary);
+        border-left: 2px solid var(--color-text-secondary);
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+ 
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 930px) 
+    and (orientation: landscape) {
+    
+}
+

@@ -1,0 +1,251 @@
+/* Import the base file */
+@import url('./base.css');
+
+/* For the section */
+.section {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+}
+
+/* For the recipe section title */
+.page__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-top: 0;
+}
+
+/* class to hide and show items dynamically */
+.hidden {
+    display: none;
+}
+.show {
+    display: block;
+}
+
+/* For the nav button div */
+.direction__button {
+    width: 35px;
+    height: 35px;
+    border: 0.5px solid var(--color-text-secondary);
+    border-radius: 50%;
+    position: fixed;
+    top: 130px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: inherit;
+    transition: left 0.3s ease-in;
+    background-color: var(--color-border-accent);
+    opacity: 0.6;
+}
+.direction__button:hover {
+    border-width: 2px;
+}
+.direction__button svg {
+    width: 20px;
+    height: 20px;
+    transition: tranform 0.3s ease-in;
+}
+
+/* For the side navbar */
+.side-nav {
+    position: fixed;
+    margin-top: 3.4vh;
+    top: 93px;
+    left: -100%;
+    background-color: var(--color-secondary);
+    height: inherit;
+    padding: 1rem;
+    border-radius: 0 10px 10px 0;
+    width: 29vw;
+    transition: left 0.3s ease-in;
+    border: 1px solid #000;
+    border-bottom: none;
+    height: 45vh;
+}
+
+/* Text when there is no recipe */
+.no__recipe-text {
+    font-size: 2rem;
+    width: 100%;
+    font-family: var(--font-family-secondary);
+}
+
+/* For the section title */
+h2 {
+    text-align: center;
+    width: 100%;
+}
+
+/* For the submit button */
+button[type="submit"] {
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid #000;
+}
+
+/* For the input */
+input {
+    width: 100%;
+    margin: auto;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border: 1px solid var(--color-text-secondary);
+    border-radius: 10px;
+    color: var(--color-text-secondary);
+}
+
+/* For the category list */
+.pagenav__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* For the category links */
+.pagenav__link {
+    display: block;
+    width: 100%;
+    color: #000;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
+
+/* Classes for floating button */
+.open {
+    left: 31%;
+}
+.closed {
+    left: 3%;
+}
+
+
+/* For recipe item */
+.recipe__link {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding-left: 2rem;
+    gap: 3rem;
+    align-items: center;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    transition: transform 0.2s ease-in;
+    background-color: var(--color-primary);
+}
+
+/* For the recipe list */
+.recipe__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
+    padding: 0 1rem;
+}
+
+/* Classes for fields with different background colors */
+.background-primary {
+    background-color: var(--color-primary);
+}
+.background-secondary {
+    background-color: var(--color-secondary);
+}
+
+
+/* main part of page */
+.page-main {
+    min-height: 70vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* For the side containing the recipes */
+.page-main {
+    min-height: 70vh;
+}
+
+/* For the recipe image */
+.recipe__image {
+    width: 25vw;
+    height: 20vw;
+    padding: 1rem;
+    border-top: 2px solid var(--color-text-secondary);
+    border-left: 2px solid var(--color-text-secondary);
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) 
+    and (max-device-width: 1024px) {
+    
+}
+ 
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) 
+    and (orientation: portrait) {
+    html {
+        font-size: 1rem;
+    }
+    /* For the side navbar */
+    .side-nav {
+        width: 85vw;
+    }
+    /* For the nav button div */
+    .direction__button {
+        left: 4%;
+    }
+    /* Classes for floating button */
+    .open {
+        left: 88%;
+    }
+    .closed {
+        left: 3%;
+    }
+    /* For the recipe image */
+    .recipe__image {
+        width: 75vw;
+        height: 35vh;
+        padding: 1rem;
+        border-top: 2px solid var(--color-text-secondary);
+        border-left: 2px solid var(--color-text-secondary);
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+    }
+    /* For the recipe list */
+    .recipe__list {
+        display: block;
+    }
+
+    /* For recipe item */
+    .recipe__link {
+        display: block;
+    }
+    .section {
+        padding: 0;
+    }
+}
+ 
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 930px) 
+    and (orientation: landscape) {
+    
+}

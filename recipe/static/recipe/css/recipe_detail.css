@@ -1,2 +1,109 @@
 /* Import the base file */
 @import url('./base.css');
+
+/* For the recipe title */
+.recipe__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* For the top part of the recipe page */
+.recipe__top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* For the recipe image */
+.recipe__top img {
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+    padding: 1rem;
+    border-top: 2px solid var(--color-text-secondary);
+    border-right: 2px solid var(--color-text-secondary);
+    border-radius: 10px;
+}
+
+/* For the recipe content */
+.recipe__content {
+    border: 2px solid var(--color-text-secondary);
+    background-color: var(--color-primary);
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 30px;
+}
+/* For the action links */
+.recipe__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) 
+    and (max-device-width: 1024px) {
+    
+}
+ 
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) 
+    and (orientation: portrait) {
+    html {
+        font-size: 1rem;
+    }
+    section {
+        padding: 1rem;
+    }
+
+    /* For the top part of the recipe page */
+    .recipe__top {
+        display: block;
+        padding: 0 2rem;
+        text-align: center;
+    }
+    /* For the recipe image */
+    .recipe__top img {
+        width: 80vw;
+        height: 300px;
+        
+    }
+    /* For the recipe content */
+    .recipe__content {
+        border: 2px solid var(--color-text-secondary);
+        background-color: var(--color-primary);
+        margin: 0.5rem;
+        padding: 2rem;
+        border-radius: 30px;
+    }
+    .active {
+        font-weight: 700;
+    }
+
+    /* For the recipe images */
+    .recipe__content img {
+        width: 80%;
+        height: auto;
+        padding: 1rem;
+        border-top: 2px solid var(--color-text-secondary);
+        border-right: 2px solid var(--color-text-secondary);
+        border-radius: 10px;
+    }
+}
+ 
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 930px) 
+    and (orientation: landscape) {
+    
+}
+
+
