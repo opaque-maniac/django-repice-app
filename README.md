@@ -1,5 +1,5 @@
 # django-repice-app
-<h1 style="text-align: center; width: 100%;">Simple recipe sharing app in Django</h1>
+<h2 style="text-align: center; width: 100%;">Simple recipe sharing app in Django</h2>
 <div>
     <img src="./readme_images/screenshot-1.png" alt="screenshot">
 </div>
@@ -38,3 +38,7 @@
 </div>
 <p>If successfull, this is what you should see</p>
 <img src="./readme_images/screenshot-7.png" alt="Test server running">
+<p>Now visit <a href="http://127.0.0.1">http://127.0.0.1</a> while test server is running and you will see the applications home page</p>
+<div>
+    <img src="./readme_images/screenshot-1.png" alt="screenshot">
+</div>
