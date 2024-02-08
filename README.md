@@ -36,3 +36,5 @@
 <div>
     <img src="./readme_images/screenshot-6.png" alt="Run test server">
 </div>
+<p>If successfull, this is what you should see</p>
+<img src="./readme_images/screenshot-7.png" alt="Test server running">
