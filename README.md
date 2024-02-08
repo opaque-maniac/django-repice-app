@@ -12,6 +12,10 @@
 <div>
     <img src="./readme_images/screenshot-2.png" alt="mobile responsive">
 </div>
+<p style="text-align: center">
+    You can for the repository
+</p>
+<img src="./readme_images/screenshot-4.png" alt="fork repository">
 <p style="text-align: center;">
     You can clone the repository using the link below.
 </p>
