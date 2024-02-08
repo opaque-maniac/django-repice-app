@@ -16,5 +16,5 @@
     You can clone the repository using the link below.
 </p>
 <div>
-    <img src="./readme_images/screenshot-3.png" alt="clpne imsgrs">
+    <img src="./readme_images/screenshots-3.png" alt="clpne imsgrs">
 </div>
