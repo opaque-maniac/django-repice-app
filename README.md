@@ -22,6 +22,7 @@
 <div>
     <img src="./readme_images/screenshots-3.png" alt="clone repository">
 </div>
+<p>Here is the command to clone the repository into your computer</p>
 <div>
     <img src="./readme_images/screenshot-9.png" alt="clone repository">
 </div>
