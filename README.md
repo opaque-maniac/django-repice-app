@@ -22,3 +22,10 @@
 <div>
     <img src="./readme_images/screenshots-3.png" alt="clpne imsgrs">
 </div>
+<p>
+    Install the requirements of the repostitory in the project direcotory   
+</p>
+<p><i>pip3 install -r requirements.py</i></p>
+<div>
+    <img src="./readme_images/screenshot-5.png" alt="Install requirements">
+</div>
