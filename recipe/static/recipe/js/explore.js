@@ -11,6 +11,7 @@ const allRecipeLinks = document.querySelectorAll('.recipe__link');
 
 // When the document loads
 document.addEventListener('DOMContentLoaded', () => {
+    navSide.style.height = `${mainDiv.clientHeight - 10}px`;
     // add an event listener for the button
     // For the hover even
     directionButton.addEventListener('mouseover', () => {
