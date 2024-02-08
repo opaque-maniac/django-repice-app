@@ -65,7 +65,7 @@
     width: 29vw;
     transition: left 0.3s ease-in;
     border: 1px solid #000;
-    border-bottom: none;
+    border-left: none;
     height: 60vh;
 }
 
@@ -143,6 +143,7 @@ input {
     color: var(--color-text-secondary);
     transition: transform 0.2s ease-in;
     background-color: var(--color-primary);
+    border-width: 2px;
 }
 
 /* For the recipe list */
@@ -241,6 +242,10 @@ input {
     }
     .section {
         padding: 0;
+    }
+    /* For the side navbar */
+    .side-nav {
+        height: 55vh;
     }
 }
  

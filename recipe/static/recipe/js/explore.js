@@ -11,7 +11,7 @@ const allRecipeLinks = document.querySelectorAll('.recipe__link');
 
 // When the document loads
 document.addEventListener('DOMContentLoaded', () => {
-    navSide.style.height = `${mainDiv.clientHeight - 10}px`;
+    navSide.style.height = `${mainDiv.clientHeight - 40}px`;
     // add an event listener for the button
     // For the hover even
     directionButton.addEventListener('mouseover', () => {
@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // For the links that have been clicked
     navSideLinks.forEach(link => {
-        link.addEventListener('click', () => {
+        if (window.location.hostname.includes(link.href)) {
             link.style.fontWeight = '700';
-        });
+        }
     })
 });
