@@ -32,6 +32,7 @@
 <p>
     Run the test server using the following command
 </p>
+<p><i>python3 manage.py runserver</i></p>
 <div>
     <img src="./readme_images/screenshot-6.png" alt="Run test server">
 </div>
