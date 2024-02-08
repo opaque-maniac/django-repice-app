@@ -12,3 +12,9 @@
 <div>
     <img src="./readme_images/screenshot-2.png" alt="mobile responsive">
 </div>
+<p style="text-align: center;">
+    You can clone the repository using the link below.
+</p>
+<div>
+    <img src="./readme_images/screenshot-3.png" alt="clpne imsgrs">
+</div>

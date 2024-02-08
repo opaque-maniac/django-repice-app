@@ -66,7 +66,7 @@
     transition: left 0.3s ease-in;
     border: 1px solid #000;
     border-bottom: none;
-    height: 45vh;
+    height: 60vh;
 }
 
 /* Text when there is no recipe */
